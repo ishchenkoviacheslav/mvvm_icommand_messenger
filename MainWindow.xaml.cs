@@ -26,6 +26,7 @@ namespace WpfApp1
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+
             Messenger.Default.Register<GoToPageMessage>
             (
                  this,
@@ -34,7 +35,7 @@ namespace WpfApp1
         }
         private object ReceiveMessage(GoToPageMessage action)
         {
-            MessageBox.Show("This method was called by Click via Messenger!");
+            MessageBox.Show(action.PageName);
             //StringBuilder sb = new StringBuilder("/Views/");
             //sb.Append(action.PageName);
             //sb.Append(".xaml");
